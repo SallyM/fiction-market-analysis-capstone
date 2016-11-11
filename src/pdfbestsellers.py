@@ -79,12 +79,13 @@ def parse_one_file(path):
     content = [row.strip() for row in content]
     entry = {}
     list_date = datetime.strftime(datetime.strptime((content[2]).replace(',',''), '%B %d %Y'), '%Y-%m-%d')
-    book_rows = content[16::2]
+    # Actual book data starts at row index 16
+    book_rows = [row for row in content[16:] if len(row) > 0]
     books = {}
     for row in book_rows:
         row = row.split('  ')
         title = row[1].split(', by ')[0]
-        author = row[1].split(', by ')[0].strip('.')
+        author = row[1].split(', by ')[1].strip('.')
         rank_this_wk = row[0]
         rank_last_wk = row[-2]
         num_wks_on_list = row[-1]
@@ -96,6 +97,14 @@ def parse_one_file(path):
                         'isbn13':None}
     entry[list_date] = books
     return entry
+
+def get_filenames():
+    dates = list_dates()
+    filenames = []
+    for date in dates:
+        filename = 'data/pdf_bestsellers/{}.pdf'.format(date.strftime('%Y-%m-%d'))
+        filenames.append(filename)
+    return filenames
 
 def write_results_to_file(entry, filename):
     a = []
@@ -110,3 +119,8 @@ def write_results_to_file(entry, filename):
         feeds.update(entry)
         with open(filename, mode='w') as f:
             f.write(json.dumps(feeds, indent=2))
+
+def parse_all_files(filenames):
+    for f in filenames:
+        entry = parse_one_file(f)
+        write_results_to_file(entry, 'data/parsed_pdf_lists.json')
