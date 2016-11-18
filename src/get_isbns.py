@@ -1,4 +1,4 @@
-def get_isbns_asins(books):
+def get_isbns_asins_goodreads(books):
     '''
     INPUT: list of books(author+title)
     OUTPUT: dictionary (book: {isbn10, isbn13, asin})
@@ -27,3 +27,31 @@ def get_isbns_asins(books):
 
     with open('data/books_with_isbns.json', mode='w') as f:
         f.write(json.dumps(scraped, indent=2))
+
+def get_isbns_google(books):
+    isbns = {}
+    books_not_found = []
+    for book in books:
+        t = '+'.join(book.split('**')[1].replace("'", '').split())
+        a = '+'.join(book.split('**')[0].replace('.', '').split())
+        ggl_url = "https://www.google.com/search?q={}+{}+isbn&oq={}+{}+isbn&aqs=chrome.\
+                    .69i57.11282j0j8&sourceid=chrome&ie=UTF-8".format(t, a, t, a)
+        ggl_cont = requests.get(ggl_url)
+        soup = BeautifulSoup(ggl_cont.content, 'html.parser')
+        try:
+            isbn = soup.findAll("span", {"class": "_G0d"})[0].text
+            if len(isbn) == 13:
+                isbns[book] = {'isbn10' : None,
+                               'isbn13' : isbn}
+            elif len(isbn) == 10:
+                isbns[book] = {'isbn10' : isbn,
+                               'isbn13' : None}
+            else:
+                isbns[book] = {'isbn10' : None,
+                               'isbn13' : None}
+        except IndexError:
+            books_not_found.append(book)
+            isbns[book] = {'isbn10' : None,
+                           'isbn13' : None}
+        time.sleep(1 + random()*3)
+    return isbns, books_not_found
