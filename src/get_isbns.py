@@ -1,3 +1,9 @@
+import os
+import time
+import json
+from bs4 import BeautifulSoup
+import requests
+
 def get_isbns_asins_goodreads(books):
     '''
     INPUT: list of books(author+title)
