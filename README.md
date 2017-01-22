@@ -5,6 +5,7 @@ Every month Amazon Kindle Direct Publishing sends a newsletter to its indie auth
 
 ## Data
 Data collection and cleaning (in a never ending loop) took most of the two weeks alloted at the end of the course for the project. It involved reaching out to several people in hopes of easily obtaining the data, and when that failed -- scraping New York Times for historic bestseller lists, scraping Goodreads for descriptions and reviews of books on the lists and extracting several thousand reviews out of millions in the Amazon data dump from a few years ago for the Stanford study. I learned about parsing pdfs (hint: it’s a pain in the neck!), pros and cons of APIs, web-crawling, and merging of all the data.
+
 I was hoping to go way back in time with the books, but after a lot of trial and error was forced to stick to the recent lists history, from 2008 to present, in order to meet project requirements and have time to make an MVP. My biggest lessons at this point were about trying many things in quick succession on a small scale before unleashing them on the whole huge dataset, not forgetting to check the results to avoid nasty surprises (got many of those *sigh*), and not getting hung up on trying to fix things that. Just. Don’t. Work.
 
 ## Analysis
@@ -35,7 +36,7 @@ The 'vampire' cluster included all kinds of vampire books as well as others in t
 What looks to be really on the rise are detective stories, spy novels and psychological thrillers (Girl on the Train, anyone?). Friend/family genre seems to be doing quite well, too.
 Here is a plot of these clusters to help you see:
 
-![Plot of Clusters over time](/plots/Clusters.pdf)
+![Clusters](/plots/Clusters.pdf)
 
 But look at the two boring ones at the bottom! These are the ‘Nora Roberts’ and ‘James Patterson’ clusters. Yes. These two authors each got their own cluster. While they don’t have any crazy ups and downs between 2008 and 2016, these two have steadily been on the bestseller lists for the eight years of data that I was able to gather. My clusters are far from perfect as you can probably tell from the words which were considered descriptive of some of them, but my model INSISTED (no matter how many different ways I tried to run it) that Nora and James be their own clusters. Nora’s cluster had 50 books, 46 of which were by her. 1 was by J.D. Robb, who, in case you didn’t know, is Nora in disguise :)
 
