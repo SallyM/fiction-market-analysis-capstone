@@ -15,17 +15,17 @@ This took a little bit of trial and error. While clustering, I discovered that m
 ## Results
 The results were pretty fascinating! My model came up with 6 clusters which included:
 * family, life, mother, year, home, mallery,  town, child, sister, carr
-    	e.g., THREE SISTERS by Susan Mallery
+  e.g., THREE SISTERS by Susan Mallery
 * want, see, say, doe, world, feel, vampire, come, people, hero
-    	e. g., ALL I WANT FOR CHRISTMAS IS A VAMPIRE by Kerrelyn Sparks
+  e. g., ALL I WANT FOR CHRISTMAS IS A VAMPIRE by Kerrelyn Sparks
 * higgins, barrington, john, reacher, logan, president, case, cia, johansen, clark
-    	e. g., LEAN MEAN THIRTEEN by Janet Evanovich
+  e. g., LEAN MEAN THIRTEEN by Janet Evanovich
 * line, keep, hard, however, every, main, action, lot, wait, start
-    	e.g., YOUR HEART BELONGS TO ME by Dean Koontz
-* nora, robert, romance, suspense, witch, brother, ireland, evil, parker, six     
-     	e.g., CHARMED AND ENCHANTED by Nora Roberts
-* patterson, james, cross, alex, murder, private, club, killer, case, michael    
-    	e.g., CROSS FIRE by James Patterson
+  e.g., YOUR HEART BELONGS TO ME by Dean Koontz
+* nora, robert, romance, suspense, witch, brother, ireland, evil, parker, six
+  e.g., CHARMED AND ENCHANTED by Nora Roberts
+* patterson, james, cross, alex, murder, private, club, killer, case, michael
+  e.g., CROSS FIRE by James Patterson
 
 Hmm.
 
