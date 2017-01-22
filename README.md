@@ -35,7 +35,7 @@ The 'vampire' cluster included all kinds of vampire books as well as others in t
 What looks to be really on the rise are detective stories, spy novels and psychological thrillers (Girl on the Train, anyone?). Friend/family genre seems to be doing quite well, too.
 Here is a plot of these clusters to help you see:
 
-![Plot of Clusters over time](https://github.com/SallyM/fiction-market-analysis-capstone/tree/master/plots/Clusters.pdf)
+![Plot of Clusters over time](/plots/Clusters.pdf)
 
 But look at the two boring ones at the bottom! These are the ‘Nora Roberts’ and ‘James Patterson’ clusters. Yes. These two authors each got their own cluster. While they don’t have any crazy ups and downs between 2008 and 2016, these two have steadily been on the bestseller lists for the eight years of data that I was able to gather. My clusters are far from perfect as you can probably tell from the words which were considered descriptive of some of them, but my model INSISTED (no matter how many different ways I tried to run it) that Nora and James be their own clusters. Nora’s cluster had 50 books, 46 of which were by her. 1 was by J.D. Robb, who, in case you didn’t know, is Nora in disguise :)
 
@@ -46,6 +46,7 @@ As I only had two weeks to complete this project, there were lots of things I ha
 * Include other textual data, such as character descriptions of books, reviews from blogs and newspapers, tweets and other social media. This would create a more complete picture of every genre and would reveal what people like/hate about certain characters, setting, plots, themes, etc.
 * Make a web-app to process new data in real, or close to real, time. I’m hoping to create something that can be accessed any time with most recent information and trends available at a few clicks. Also, an app can make it easier to interpret all the interesting findings of my models without having to rely on somewhat confusing plots.
 
+## Conclusion
 All in all, this was a fun and highly educational experience for me. Things I’ve learned are:
 * Planning matters. It is easier to complete a project when you have a plan, even a bad one.
 * Trial and error on small parts first will prevent you from having to clean up a big mess later.
